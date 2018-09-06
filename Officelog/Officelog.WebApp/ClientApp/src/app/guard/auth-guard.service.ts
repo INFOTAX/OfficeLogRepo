@@ -29,10 +29,26 @@ export class AuthGuardService implements CanActivate {
 
   
 
-    if (!this.loginService.isAuthenticated()) {
-        this.router.navigate(['/login']);
-    }
+    // if (!this.loginService.isAuthenticated()) {
+    //     this.router.navigate(['/login']);
+    // }
 
-    return this.loginService.isAuthenticated();
+    // return this.loginService.isAuthenticated();
+
+    const userRole = this.loginService.getRole();
+    console.log(userRole);
+        const permission = route.data["permission"];
+        console.log(permission);
+        let canActivate: boolean;
+
+        if (!permission) throw new Error('Permissions is not setup!');
+        if (!permission.only.length) throw new Error('Roles are not setup!');
+
+        canActivate = permission.only.includes(userRole);
+        console.log(canActivate);
+
+        if (!canActivate) this.router.navigate([permission.redirectTo]);
+
+        return canActivate;
 }
 }

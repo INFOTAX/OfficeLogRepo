@@ -39,11 +39,14 @@ const appRoutes: Routes = [
     component: AuthenticatedUserComponent,
     canActivate: [AuthGuardService],
     data : {
-      expectedRole : "Admin"
+      permission: {
+        only: ["Admin"],
+        redirectTo: 'login'
+    }
     },
     children: [
-      { path: 'dashboard_log', component: DashboardComponent, canActivate: [AuthGuardService] },
-      { path: 'user_log', component: LoginUserFormComponent, canActivate: [AuthGuardService] },
+      { path: 'dashboard_log', component: DashboardComponent  },
+      { path: 'user_log', component: LoginUserFormComponent  },
 
 
     ]

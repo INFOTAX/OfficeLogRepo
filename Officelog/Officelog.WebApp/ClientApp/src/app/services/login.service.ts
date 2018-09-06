@@ -61,6 +61,10 @@ export class LoginService {
 
     }
 
+    public getRole():IUserProfile {
+        return this.profile = JSON.parse(localStorage.getItem('role')); 
+    }
+
     private readUserFromLocalStorage() {
 
         this.profile = JSON.parse(localStorage.getItem('profile'));
