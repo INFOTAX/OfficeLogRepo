@@ -1,28 +1,20 @@
-<div class="ui-g c">
-    <div class="ui-g-10 ui-sm-10 ui-md-10">
-      <div class="ui-g">
-        <div class="ui-g-6 ui-sm-6-ui-md-6 c1 dash" (click)="userwise()">
-          <p-card title="&nbsp;" [style]="{width: '360px',height:'350px',background:'wheat'}" styleClass="ui-card-shadow">
-            <div>
-              <h1 style="text-align: center;">Userwise</h1>
-              <br>
-              <i class="fa fa-university" aria-hidden="true" style="font-size:70px;color:rgb(39, 35, 35);padding-left: 120px;
-              padding-top:40px;"></i>
-            </div>
-          </p-card>
-        </div>
-        <div class="ui-g-6 ui-sm-6-ui-md-6 dash" (click)="consolidated()">
-  
-          <p-card title="&nbsp;" [style]="{width: '360px',height:'350px',background:'wheat'}" styleClass="ui-card-shadow">
-            <div>
-              <h1 style="text-align: center;">Consolidated</h1>
-              <br>
-              <i class="fa fa-line-chart" aria-hidden="true" style="font-size:70px;color:rgb(39, 35, 35);padding-left: 120px;
-              padding-top:40px;"></i>
-            </div>
-          </p-card>
-        </div>
-      </div>
-    </div>
+<div class="container">
+<div class="ui-g">
+<!--for card one user start-->
+<div class="ui-g-6 ui-sm-6-ui-md-6 card1" (click)="userwise()">
+    <h1 style="text-align: center;">Userwise</h1>
+    <i class="fa fa-user" aria-hidden="true" style="font-size:70px;color:rgb(39, 35, 35);padding-left:95px;
+    padding-top:40px;"></i>
   </div>
-  <router-outlet></router-outlet>
+<!--for card one user end-->
+<!--for card one consolidated start-->
+<div class="ui-g-6 ui-sm-6-ui-md-6 card2" (click)="consolidated()">
+    <h1 style="text-align: center;">Consolidated</h1>
+    <i class="fa fa-users" aria-hidden="true" style="font-size:70px;color:rgb(39, 35, 35);padding-left: 95px;
+    padding-top:40px;"></i>
+  </div>
+<!--for card one consolidated end-->
+
+</div>
+
+</div>

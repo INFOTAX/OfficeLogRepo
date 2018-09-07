@@ -36,6 +36,10 @@ export class UserlogService extends ServiceBase<IUserlog> {
         return this.http.get<IUserlog[]>(`${this.baseUrl}/UserUnits`);
     }
 
+    updateProfile(userProfile : IUserlog){
+        return this.http.put(`${this.baseUrl}/Profile`,userProfile);
+    }
+
    
 }
 
