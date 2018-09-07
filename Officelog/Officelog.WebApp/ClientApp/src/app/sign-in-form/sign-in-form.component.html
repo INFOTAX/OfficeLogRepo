@@ -1,41 +1,20 @@
-<form style="margin-left: 220px; margin-right: 220px; margin-top:35px">
-    <p-panel>
-        <p-header  style="text-align:center;">
-            <div class="ui-helper-clearfix">
-            <span class="ui-panel-title" style="font-family:Arial rounded bold;font-size:26px;display:inline-block;margin-top:2px">User Form</span>
-            </div>
-        </p-header>
-
-<div class="ui-g ui-fluid">
-    <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
-        <label for="name">  User Name:</label>
-      </div>
-      <div class="ui-sm-8  ui-g-8">
-        <input id="name"  type="text" pInputText #userName>
-      </div>
-      <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
-          <label for="password">Password:</label>
-        </div>
-        <div class="ui-sm-8  ui-g-8">
-          <input id="name" type="text" #pwd pInputText>
-        </div>
-      
-
-</div>
-    
-
-
-
-        <p-footer>
-            <button pButton type="button" (click)="doLogin(userName.value,pwd.value)" label="Login" class="ui-button-success"></button>
+<div class="bg">
+<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="assets/image/logo.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                    
+                <input type="email" id="inputEmail"  class="form-control" placeholder="&#xF007; &nbsp; Username" #userName required autofocus>
+                <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
             
-          </p-footer>
-
-
-      </p-panel>
-
-</form>
-<br>
-<br>
-
-
+                <input type="password" id="inputPassword" class="form-control" placeholder="&#xF084;  &nbsp;Password" #pwd required>
+             <br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin btnedit" (click)="doLogin(userName.value,pwd.value)"  type="submit">Sign in</button>
+            </form><!-- /form -->
+          
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+</div>
