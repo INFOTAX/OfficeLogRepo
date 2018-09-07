@@ -34,10 +34,10 @@ export class AdminUserwiseReportDashboardComponent implements OnInit {
 
   
   adminUserProfileCompanyReporting(){
-    this._router.navigate(['/authenticated/admin_user_profile_company_reporting',this.userName]);
+    this._router.navigate(['admin/admin_user_profile_company_reporting',this.userName]);
   }
   adminUserMarketingCompanyReporting(){
-    this._router.navigate(['/authenticated/admin_user_profile_marketing_reporting',this.userName]);
+    this._router.navigate(['admin/admin_user_profile_marketing_reporting',this.userName]);
   }
  
 
