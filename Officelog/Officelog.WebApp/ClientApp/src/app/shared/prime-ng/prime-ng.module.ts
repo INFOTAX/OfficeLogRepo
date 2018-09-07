@@ -17,7 +17,7 @@ import { CardModule } from 'primeng/card';
 import {ConfirmationService} from 'primeng/api';
 import {CalendarModule} from 'primeng/calendar';
 import {  GrowlModule } from 'primeng/growl';
-import {ConfirmDialogModule, ChartModule} from 'primeng/primeng';
+import {ConfirmDialogModule, ChartModule, PanelMenuModule} from 'primeng/primeng';
 import {PaginatorModule} from 'primeng/paginator';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {TooltipModule} from 'primeng/tooltip';
@@ -47,7 +47,8 @@ import {TooltipModule} from 'primeng/tooltip';
         TableModule,
         DataViewModule,
         ToastModule,
-        CalendarModule
+        CalendarModule,
+        PanelMenuModule
     ],
     exports: [
         TooltipModule,
@@ -72,7 +73,8 @@ import {TooltipModule} from 'primeng/tooltip';
         TableModule,
         DataViewModule,
         ToastModule,
-        CalendarModule
+        CalendarModule,
+        PanelMenuModule
     ],
     declarations: [],
     providers: [ConfirmationService],

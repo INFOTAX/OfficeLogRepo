@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     canActivate: [AuthGuardService],
     data : {
       permission: {
-        only: ["Admin"],
+        only: ["User"],
         redirectTo: 'login'
     }
     },

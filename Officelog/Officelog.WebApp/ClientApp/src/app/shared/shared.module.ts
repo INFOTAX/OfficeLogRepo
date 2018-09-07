@@ -3,6 +3,7 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
+import { AdminAuthenticationComponent } from './admin-authentication/admin-authentication.component';
 
 
 
@@ -15,9 +16,10 @@ import { NavigationBarComponent } from '../navigation-bar/navigation-bar.compone
     exports: [
         PrimeNgModule,
         FormsModule,
+        AdminAuthenticationComponent,
         ReactiveFormsModule
     ],
-    declarations: [AuthenticatedUserComponent,NavigationBarComponent],
+    declarations: [AuthenticatedUserComponent,NavigationBarComponent, AdminAuthenticationComponent],
     providers: [],
 })
 export class SharedModule { }

@@ -43,7 +43,7 @@ export class NavigationBarComponent implements OnInit {
       icon: 'fa fa-fw fa-book',routerLink: ['/authenticated/marketing-dashBoard']
     },
     {label: 'Admin User ProfileReporting Dashboard', 
-        icon: 'fa fa-fw fa-area-chart ',routerLink: ['/authenticated/admin-userwise-report-dashboard']
+        icon: 'fa fa-fw fa-area-chart ',routerLink: ['/admin/admin-userwise-report-dashboard']
   },
 
      
@@ -54,8 +54,8 @@ export class NavigationBarComponent implements OnInit {
 
     {label: 'Consolidated-admin',
     items:[
-      {label: 'Marketing-report', icon: 'fa fa-fw fa-book' ,routerLink: ['/authenticated/Marketing-report']},
-      {label: 'Company-report', icon: 'fa fa-fw fa-book' ,routerLink: ['/authenticated/Company-report']},
+      {label: 'Marketing-report', icon: 'fa fa-fw fa-book' ,routerLink: ['/admin/Marketing-report']},
+      {label: 'Company-report', icon: 'fa fa-fw fa-book' ,routerLink: ['/admin/Company-report']},
     ],
      icon: 'fa fa-fw fa-book'},
   ]
@@ -96,6 +96,7 @@ export class NavigationBarComponent implements OnInit {
   logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('profile');
+    localStorage.removeItem('role');
     this._router.navigate(['login']);
 
  };

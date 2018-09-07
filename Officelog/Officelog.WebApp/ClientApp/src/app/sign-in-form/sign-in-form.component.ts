@@ -38,16 +38,26 @@ export class SignInFormComponent implements OnInit {
             this.loginService.getToken(this.login)
                 .subscribe(res => {
                     // if (res. === 200)
-                        this.onLoginSuccess();
+                        this.onGettingRole();
                 });//,
             // error => alert("Failed" + error));
 
 
     }
 
-    onLoginSuccess(): void {
-        this._router.navigate(['authenticated/dashboard_log']);
+    // onLoginSuccess(): void {
+    //     this._router.navigate(['authenticated/dashboard_log']);
 
+    // }
+
+    onGettingRole() {
+       let role = JSON.parse(localStorage.getItem('role'));
+       console.log(role);
+       if(role == 'Admin'){
+           return this._router.navigate(['admin/dashboard']);
+       }else if(role == 'User'){
+           return this._router.navigate(['authenticated/dashboard_log']);
+       }
     }
 
 }

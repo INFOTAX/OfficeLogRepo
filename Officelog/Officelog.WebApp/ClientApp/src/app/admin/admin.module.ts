@@ -8,13 +8,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { AuthenticatedUserComponent } from '../shared/authenticated-user/authenticated-user.component';
+import { AdminAuthenticationComponent } from '../shared/admin-authentication/admin-authentication.component';
+import { AuthGuardService } from '../guard/auth-guard.service';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { AdminConsolidatedSidebarComponent } from './Components/admin-consolidated-sidebar/admin-consolidated-sidebar.component';
 
 
 
 
 const appRoutes: Routes = [
-  {path: 'authenticated',
-    component : AuthenticatedUserComponent,
+  {path: 'admin',
+    component : AdminAuthenticationComponent,
+    canActivate: [AuthGuardService],
+    data : {
+      permission: {
+        only: ["Admin"],
+        redirectTo: 'login'
+    }
+    },
    
   children :[
     { path: 'admin-userwise-report-dashboard', component: AdminUserwiseReportDashboardComponent},
@@ -22,6 +33,7 @@ const appRoutes: Routes = [
     { path: 'admin_user_profile_marketing_reporting/:userName', component: AdminUserProfileMarketingReportingComponent},
     { path: 'Marketing-report', component: AdminConsolidatedMarketingReportingComponent},
     { path: 'Company-report', component: AdminConsolidatedCompanyReportingComponent},
+    { path: 'dashboard', component: AdminDashboardComponent},
      
   ]}
   
@@ -32,14 +44,16 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(appRoutes),
+    RouterModule.forRoot(appRoutes),
   ],
   declarations: [
     AdminUserProfileMarketingReportingComponent,
     AdminUserProfileCompanyReportingComponent,
     AdminUserwiseReportDashboardComponent,
     AdminConsolidatedMarketingReportingComponent,
-    AdminConsolidatedCompanyReportingComponent
+    AdminConsolidatedCompanyReportingComponent,
+    AdminDashboardComponent,
+    AdminConsolidatedSidebarComponent
 
   ]
 })
