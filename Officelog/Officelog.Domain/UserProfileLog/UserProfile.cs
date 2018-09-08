@@ -17,5 +17,18 @@ namespace Officelog.Domain.UserProfileLog
 
         public int AdminId {get; set;}
 
+
+        public UserProfile()
+      {
+        
+       }
+
+       public void Modify(string name,string contactNumber,string designation)
+       {
+          Name = name;
+          ContactNumber = contactNumber;
+          Designation = designation;
+       }
     }
+   
 }

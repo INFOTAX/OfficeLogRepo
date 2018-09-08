@@ -67,6 +67,22 @@ namespace Officelog.WebApp.UserProfileApi
                return Ok(userUnits); 
         }
 
+         [HttpPut("Profile")]
+        public async Task<IActionResult> UpdateUserProfile([FromBody] UserProfileResource model)
+        {
+            // var accountingUnitFromDb = await _database.AccountingUnits.SingleOrDefaultAsync();
+             var userProfileFromDb = await _database.UserProfiles.SingleOrDefaultAsync(t => t.Subject == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            if (userProfileFromDb == null)
+            {
+                return NotFound();
+            }
+
+            userProfileFromDb.Modify(model.Name, model.ContactNumber, model.Designation);
+
+            await _unitOfWork.CompleteAsync();
+            return Ok(model);
+        }
+
     }
 
 

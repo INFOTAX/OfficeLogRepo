@@ -30,7 +30,12 @@
  }
 
  .bg{
-    background-image:url("bg1.png");
+     height: 648px;
+    background-image:url("b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
  }
 .card {
    
