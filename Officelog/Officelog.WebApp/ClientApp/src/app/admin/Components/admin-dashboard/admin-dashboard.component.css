@@ -19,3 +19,13 @@
     margin-left:18%;
     cursor: pointer;
 }
+
+
+h2{
+    
+    color:rgb(43, 30, 88);
+    font-size: 38px;
+    font-weight: 700;
+    /* text-shadow: -2px 2px 5px #3d3c3d; */
+
+}
