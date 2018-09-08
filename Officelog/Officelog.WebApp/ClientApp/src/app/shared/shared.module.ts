@@ -6,6 +6,7 @@ import { NavigationBarComponent } from '../navigation-bar/navigation-bar.compone
 import { AdminAuthenticationComponent } from './admin-authentication/admin-authentication.component';
 import { AdminModule } from '../admin/admin.module';
 import { AdminNavBarComponent } from '../admin/Components/admin-nav-bar/admin-nav-bar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -24,7 +25,7 @@ import { AdminNavBarComponent } from '../admin/Components/admin-nav-bar/admin-na
         AdminNavBarComponent,
 
     ],
-    declarations: [AuthenticatedUserComponent,NavigationBarComponent, AdminAuthenticationComponent, AdminNavBarComponent],
+    declarations: [AuthenticatedUserComponent,NavigationBarComponent, AdminAuthenticationComponent, AdminNavBarComponent, SidebarComponent],
     providers: [],
 })
 export class SharedModule { }
