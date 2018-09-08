@@ -1,4 +1,22 @@
+
+
+
 <app-navigation-bar></app-navigation-bar>
 <br>
-<br>
-<router-outlet></router-outlet>
+
+<br> 
+
+    <div class="ui-g">
+       
+                <!--sidebar start-->
+        <div class="ui-g-2 bgc" >
+                <app-sidebar></app-sidebar>
+        </div><!-- sidebar end-->
+         <!--nav start-->
+         <div class="ui-g-10">
+            
+                <router-outlet></router-outlet>
+            </div><!--nav end-->
+       
+    </div><!--ui-g -end-->
+

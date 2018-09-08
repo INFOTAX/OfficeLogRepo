@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {  Router } from '@angular/router';
 
@@ -6,16 +6,19 @@ import {  Router } from '@angular/router';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
+  host: {
+    '(document:click)': 'handleClick($event)',
+},
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
   items: MenuItem[];
-
-  constructor(private _router : Router) { }
+  toggleMenu: boolean = false;
+  constructor(private _router : Router,private elementRef:ElementRef) { }
 
   ngOnInit() {
    
-    this.items = [ 
+   /* this.items = [ 
       {label: 'Home', icon: 'fa fa-fw fa-home' ,routerLink: ['/authenticated/dashboard_log']},
       
 
@@ -51,7 +54,7 @@ export class NavigationBarComponent implements OnInit {
     ],
      icon: 'fa fa-fw fa-book'},
   ]
-      
+      */
 
      
 
@@ -75,7 +78,18 @@ export class NavigationBarComponent implements OnInit {
     
   }
 
-
+  handleClick(event){
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+        this.toggleLogin =false;
+      this.toggleMenu=false;
+    }
+}
+ 
+  toggleLogin:boolean=false;
+  onToggleLogin():void{
+    //for logged in user profile/login toggle
+    this.toggleLogin = !this.toggleLogin;     
+  }
  
   logOut(){
     localStorage.removeItem('token');
