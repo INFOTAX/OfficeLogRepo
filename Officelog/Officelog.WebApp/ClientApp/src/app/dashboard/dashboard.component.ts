@@ -11,26 +11,15 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-  marketingLogList() {
+  
+  companyDashboard(){
 
-    this._router.navigate(['/marketing_log_list']);
-    // this.compLog=true;
-    // this.markLog=false;
-  }
-  companyLogList(){
-
-    this._router.navigate(['company_log_list']);
-    // this.compLog=true;
-    // this.markLog=false;
-  }
-  companydashboardLog(){
-
-    this._router.navigate(['companydashboard_log']);
+    this._router.navigate(['authenticated/company_log/:id']);
    
   }
-  dashboardLog(){
+  marketingDashboard(){
 
-    this._router.navigate(['dashboard_log']);
+    this._router.navigate(['authenticated/marketing_log/:id']);
    
   }
 }

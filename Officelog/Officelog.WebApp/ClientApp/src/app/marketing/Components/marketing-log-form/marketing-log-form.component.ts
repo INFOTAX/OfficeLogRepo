@@ -91,7 +91,7 @@ export class MarketingLogFormComponent implements OnInit {
     return this.fb.group({
       id: 0,
       name: ['',Validators.required],
-      contactNumber: [[],[Validators.required]],
+      contactNumber: [[],[Validators.required, ]],
       softwareInterested: ['',Validators.required],
       rateUs: [''],
       fee:0,

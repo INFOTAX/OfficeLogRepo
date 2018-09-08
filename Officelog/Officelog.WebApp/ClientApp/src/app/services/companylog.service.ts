@@ -28,7 +28,7 @@ export class CompanylogService extends ServiceBase<ICompanylog>{
       queryHandling: "",
       serviceProvided: "",
       visitorType: "",
-      softwareInterested: true,
+      softwareInterested: "",
       rateUs: "",
       rateUsForNo: "",
       suggestionForYes: "",

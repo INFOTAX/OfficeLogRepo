@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
     this.items = [
          
       {
-        label: 'Company',
+        label: 'Company', expanded : true,
         icon: 'pi pi-fw pi-pencil',
         items: [
             {label: 'List',  icon: 'fa fa-fw fa-book',routerLink:['/authenticated/company_log_list']},
@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
         ]
     },
     {
-      label: 'Marketing',
+      label: 'Marketing', expanded : true,
       icon: 'pi pi-fw pi-pencil',
       items: [
           {label: 'List', icon: 'fa fa-fw fa-book',routerLink:  ['/authenticated/marketing_log_list']},
@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
   },
   {
     label: 'Conversion',
-    icon: 'pi pi-fw pi-pencil',
+    icon: 'pi pi-fw pi-pencil', expanded : true,
     items: [
         {label: 'List', icon: 'fa fa-fw fa-book' ,routerLink: ['/authenticated/conversion_list']}
        
