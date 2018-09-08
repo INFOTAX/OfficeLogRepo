@@ -18,23 +18,23 @@ export class SidebarComponent implements OnInit {
         label: 'Company',
         icon: 'pi pi-fw pi-pencil',
         items: [
-            {label: 'Company-List',  icon: 'fa fa-fw fa-book',routerLink: ['/authenticated/companydashboard_log']},
-            {label: 'Company-Report', icon: 'fa fa-fw fa-area-chart',routerLink: ['/authenticated/company_log_list']}
+            {label: 'List',  icon: 'fa fa-fw fa-book',routerLink:['/authenticated/company_log_list']},
+            {label: 'Report', icon: 'fa fa-fw fa-area-chart',routerLink:  ['/authenticated/companydashboard_log']}
         ]
     },
     {
       label: 'Marketing',
       icon: 'pi pi-fw pi-pencil',
       items: [
-          {label: 'Marketing-List', icon: 'fa fa-fw fa-book',routerLink: ['/authenticated/marketing-dashBoard']},
-          {label: 'Marketing-Report', icon: 'fa fa-fw fa-area-chart',routerLink: ['/authenticated/marketing_log_list']}
+          {label: 'List', icon: 'fa fa-fw fa-book',routerLink:  ['/authenticated/marketing_log_list']},
+          {label: 'Report', icon: 'fa fa-fw fa-area-chart',routerLink:['/authenticated/marketing-dashBoard']}
       ]
   },
   {
     label: 'Conversion',
     icon: 'pi pi-fw pi-pencil',
     items: [
-        {label: 'Conversion-List', icon: 'fa fa-fw fa-book' ,routerLink: ['/authenticated/conversion_list']}
+        {label: 'List', icon: 'fa fa-fw fa-book' ,routerLink: ['/authenticated/conversion_list']}
        
     ]
 },

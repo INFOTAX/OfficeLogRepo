@@ -7,7 +7,7 @@
               <a class='navbar-brand' [routerLink]="['/authenticated/dashboard_log']"><img src="assets/image/logo.png" style ="width:60px;height:27px;"></a>
             </div>
             <div class="navbar-header">
-                <a class='navbar-brand' [routerLink]="['/authenticated/dashboard_log']" style="text-decoration: none; color:whitesmoke;">Dashboard</a>
+                <a class='navbar-brand' [routerLink]="['/authenticated/dashboard_log']" style="text-decoration: none; color:silver;"><i class="fa fa-home"></i> &nbsp;Home</a>
             </div>
           <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
@@ -20,15 +20,15 @@
                       <ul class="dropdown-menu" [ngClass]="{'toggleLoginStyle':toggleLogin ===true}">
                           <li>
     
-                              <a [routerLinkActive]="['link-active']" [routerLink]="['/authenticated/user_log/details']" class=" btn btn-link">
-                                  User Form
+                              <a [routerLinkActive]="['link-active']" [routerLink]="['/authenticated/user_log/detail']" class=" btn btn-link" style="text-decoration: none; color: black;">
+                                  User Profile
                               </a>
     
     
                           </li>
                           <li role="separator" class="divider"></li>
                           <li>
-                              <a class="btn btn-link" (click)="logOut()">
+                              <a class="btn btn-link" (click)="logOut()"  style="text-decoration: none; color: black;">
                                   <span class='glyphicon glyphicon-log-out'></span> Log Out
                               </a>
                           </li>
