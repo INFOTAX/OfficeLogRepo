@@ -15,7 +15,7 @@ export class AdminDashboardComponent implements OnInit {
 
 
   public userwise(){
-        this.router.navigate(['admin/admin-userwise-report-dashboard'])
+        this.router.navigate(['admin/userwise-report-dashboard'])
 }
 
 public consolidated(){

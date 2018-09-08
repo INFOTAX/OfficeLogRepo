@@ -76,12 +76,12 @@ export class ConversionFormComponent implements OnInit {
     this.marketingLog = marketingLog;
     console.log(this.marketingLog); 
 
-    if (this.marketingLog.id == 0) {
-      this.conversionForm = this.newForm();
+  //   if (this.marketingLog.id == 0) {
+  //     this.conversionForm = this.newForm();
     
-  }
+  // }
   
-    else{
+  //   else{
       this.conversionForm.patchValue({
 
       id: this.marketingLog.id,
@@ -93,8 +93,8 @@ export class ConversionFormComponent implements OnInit {
       for (let i = 0; i < this.marketingLog.serviceItems.length; i++) {
         this.serviceTypeItems.push(this.buildServiceType(this.marketingLog.serviceItems[i]));
 
-    }
-    }
+     }
+   // }
     console.log(this.marketingLog)
   }
   addNewServiceType(type : HTMLInputElement,rate : HTMLInputElement){
