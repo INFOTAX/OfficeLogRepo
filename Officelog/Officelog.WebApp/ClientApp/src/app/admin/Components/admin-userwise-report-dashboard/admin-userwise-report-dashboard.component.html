@@ -1,11 +1,24 @@
+
+<br>
+<br>
+<br>
+
+<div class="row ">
+    <div class="col-md-4">
+      </div>
+    <div class="col-md-5"> <h2>Welcome To User Wise Reporting</h2>
+      </div>
+    </div>
+
+
 <div class="ui-g">
   <div class="ui-g-4 ui-md-offset-3">
     <div class="ui-g-6 ui-sm-6-ui-md-6 c">
       <p-card title="&nbsp;" [style]="{width: '460px',height:'250px',background:'#caceda',borderRadius:'25px'}" styleClass="ui-card-shadow">
         <div>
-          <label style="font-weight: 700;"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Select User Wise: &nbsp;&nbsp;</label>
+          <label style="font-weight: 700;"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; User: &nbsp;&nbsp;</label>
           
-          <p-dropdown [style]="{'width': '175px'}" [options]="usersSelectList" [(ngModel)]="userName"  placeholder="Select a Type" filter="true">
+          <p-dropdown [style]="{'width': '175px'}" [options]="usersSelectList" [(ngModel)]="userName"  placeholder="   Select " filter="true">
             <ng-template let-option pTemplate="item">
               <div translate> {{option.label}}</div>
             </ng-template>
@@ -16,9 +29,9 @@
       <div class="ui-g">
         <div class="ui-g-6 ui-sm-6 ui-md-6">
          
-        <p-button label="Go to company report" button type="button" (onClick)="adminUserProfileCompanyReporting()" icon="fa fa-fw fa-arrow-left" class="ui-button-rounded ui-button-success"></p-button>
+        <p-button label="Go to company report" button type="button" (onClick)="adminUserProfileCompanyReporting()" icon="fa fa-fw fa-arrow-right" class="ui-button-rounded ui-button-success"></p-button>
       </div> <div class="ui-g-6 ui-sm-6 ui-md-6">
-        <p-button label="Go to Marketing Report" button type="button" (onClick)=" adminUserMarketingCompanyReporting()" icon="fa fa-fw fa-arrow-left" class="ui-button-rounded ui-button-success"></p-button>
+        <p-button label="Go to Marketing Report" button type="button" (onClick)=" adminUserMarketingCompanyReporting()" icon="fa fa-fw fa-arrow-right" class="ui-button-rounded ui-button-success"></p-button>
       </div>
       </div>
 
