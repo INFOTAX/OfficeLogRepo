@@ -7,7 +7,7 @@
       <div class="ui-helper-clearfix">
         <span class="ui-panel-title" style="display:inline-block;
          font-weight: bold; font-size: 25px">Company Log</span>
-      </div>
+      </div> 
     </p-header>
     <div class="ui-g">
 
@@ -21,17 +21,29 @@
       <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
         <label for="name">Trade Name:</label>
       </div>
-      <div class="ui-sm-8  ui-g-8">
+      <div class="ui-sm-4  ui-g-4">
         <input id="name" formControlName="name" type="text" pInputText>
       </div>
+      <div class="ui-sm-4  ui-g-4">
+      <div class="ui-message ui-messages-error" style="border: 0px; color: red" *ngIf="userForm.get('name').touched && userForm.get('name').invalid">
+        <i class="fa fa-fw fa-close"></i>
+        Trade name is required
+      </div>
+    </div>
 
 
 
       <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
         <label for="contact">Contact Number:</label>
       </div>
-      <div class="ui-sm-8  ui-g-8">
+      <div class="ui-sm-4  ui-g-4">
         <input id="contact" formControlName="contactNumber" type="number" pInputText>
+      </div>
+      <div class="ui-sm-4  ui-g-4">
+        <div class="ui-message ui-messages-error" style="border: 0px; color: red" *ngIf="userForm.get('contactNumber').touched && userForm.get('contactNumber').invalid">
+          <i class="fa fa-fw fa-close"></i>
+          Contact number is required
+        </div>
       </div>
 
 
@@ -53,6 +65,12 @@
           <p-radioButton name="group1" formControlName="queryHandling" value="Excellent" label="Excellent"></p-radioButton>
         </div>
       </div>
+      <div class="ui-sm-4  ui-g-4 ui-md-offset-4" *ngIf="userForm.get('queryHandling').touched && userForm.get('queryHandling').invalid">
+        <div class="ui-message ui-messages-error" style="border: 0px; color: red" >
+          <i class="fa fa-fw fa-close"></i>
+          This field is required
+        </div>
+      </div>
 
       <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
         <label for="serviceProvided">Service Provided:</label>
@@ -71,14 +89,28 @@
           <p-radioButton name="group2" formControlName="serviceProvided" value="Excellent" label="Excellent"></p-radioButton>
         </div>
       </div>
+      <div class="ui-sm-4  ui-g-4 ui-md-offset-4" *ngIf="userForm.get('serviceProvided').touched && userForm.get('serviceProvided').invalid">
+        <div class="ui-message ui-messages-error" style="border: 0px; color: red">
+          <i class="fa fa-fw fa-close"></i>
+          This field is required
+        </div>
+      </div>
 
       <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
         <label for="visitorType">Visitor Type:</label>
       </div>
-      <div class="ui-sm-8  ui-g-8 ui-fluid">
+      <div class="ui-g-8">
+      <div class="ui-sm-6  ui-g-6 ui-fluid">
         <p-dropdown [style]="{'width': '175px'}" [options]="visitorType" placeholder="Select a Type" formControlName="visitorType"
           filter="true"></p-dropdown>
       </div>
+      <div class="ui-sm-6  ui-g-6" *ngIf="userForm.get('visitorType').touched && userForm.get('visitorType').invalid">
+        <div class="ui-message ui-messages-error" style="border: 0px; color: red">
+          <i class="fa fa-fw fa-close"></i>
+          Visitor type is required
+        </div>
+      </div>
+    </div>
 
       <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
         <label for="rateUs">Are you interested in our software?</label>
@@ -90,8 +122,12 @@
         </div>
         <div class="ui-sm-4  ui-g-4 nopad">
           <p-radioButton name="group3" formControlName="softwareInterested" value="No" label="No" (onClick)="redioNo();"></p-radioButton>
-
-
+        </div>
+        <div class="ui-sm-4  ui-g-4" *ngIf="userForm.get('softwareInterested').touched && userForm.get('softwareInterested').invalid">
+          <div class="ui-message ui-messages-error" style="border: 0px; color: red">
+            <i class="fa fa-fw fa-close"></i>
+            This field is required
+          </div>
         </div>
 
       </div>
@@ -162,7 +198,7 @@
       </div>
     </div>
     <p-footer>
-      <button pButton type="submit" label="Submit" class="ui-button-success"></button>
+      <button pButton type="submit" label="Submit" class="ui-button-success" [disabled]="userForm.invalid"></button>
     </p-footer>
   </p-panel>
 </form>

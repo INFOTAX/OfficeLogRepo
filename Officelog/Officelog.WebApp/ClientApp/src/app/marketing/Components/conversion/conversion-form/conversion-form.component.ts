@@ -7,7 +7,7 @@ import { MarketinglogService } from '../../../../services/marketinglog.service';
 
 export interface ServiceItems {
   serviceType: string;
-  rate: number;
+  rate: number; 
 }
 
 @Component({
@@ -96,6 +96,42 @@ export class ConversionFormComponent implements OnInit {
     }
     }
     console.log(this.marketingLog)
+  }
+  addNewServiceType(type : HTMLInputElement,rate : HTMLInputElement){
+    var serviceItem : ServiceItems = {
+      serviceType : String(type.value),
+      rate : Number(rate.value)
+    }
+    this.addServiceLine(serviceItem)
+  }
+
+  deleteServiceType(index: number) {
+    this.serviceTypeItems.removeAt(index);
+  }
+
+  addServiceLine(serviceItem : ServiceItems):void{
+    this.serviceTypeItems.push(this.buildServiceType(serviceItem));
+  }
+
+  saveConversionLog():void {
+
+    if (this.conversionForm.valid) {
+  
+        let p = Object.assign({}, this.marketingLog, this.conversionForm.value);
+  
+         this.marketingLogService.save(p, this.id)
+            .subscribe(si=>{});
+          this.onSaveComplete()
+          
+    }
+  
+  
+    else if (!this.conversionForm.dirty) {
+        this.onSaveComplete();
+    }
+  }
+   onSaveComplete(){
+    this.router.navigate(['authenticated/conversion_list'])
   }
 
 

@@ -5,7 +5,7 @@ import { SelectItem } from 'primeng/components/common/selectitem';
 
 import { ICompanylog } from '../company-log-list/company';
 import { Message } from 'primeng/components/common/api';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CompanylogService } from '../../../services/companylog.service';
 
 
@@ -33,7 +33,7 @@ export class CompanyLogFormComponent implements OnInit {
   }
   companyLogList() {
 
-    this._router.navigate(['company_log_list']);
+    this._router.navigate(['authenticated/company_log_list']);
     // this.compLog=true;
     // this.markLog=false;
   }
@@ -67,12 +67,12 @@ export class CompanyLogFormComponent implements OnInit {
   newForm(): FormGroup {
     return this.fb.group({
       id: 0,
-      name: [''],
-      contactNumber: [''],
-      queryHandling: [''],
-      serviceProvided: [''],
-      visitorType: [''],
-      softwareInterested: [''],
+      name: ['',Validators.required],
+      contactNumber: [[],[Validators.required]],
+      softwareInterested: ['',Validators.required],
+      queryHandling: ['',Validators.required],
+      serviceProvided: ['',Validators.required],
+      visitorType: ['',Validators.required],
       rateUs: [''],
       suggestionForYes: [''],
       suggestionForNo: [''],

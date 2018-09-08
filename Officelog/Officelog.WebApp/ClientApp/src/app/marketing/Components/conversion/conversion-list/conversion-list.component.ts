@@ -14,7 +14,7 @@ export class ConversionListComponent implements OnInit {
    
   conversionList;
   selectedConversionList: IMarketinglog;
-  id;
+  id:number;
 
   constructor(private conversionService: ConversionServiceService,
               private _router: Router,
@@ -31,7 +31,7 @@ getConversionList(){
 onRowSelect(event) { 
   this.id = event.data.id;
   console.log(this.id)
-  this._router.navigate(['/conversion-form',this.id])
+  this._router.navigate(['authenticated/conversion-form',this.id])
   
   
 }
