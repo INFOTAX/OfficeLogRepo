@@ -22,9 +22,11 @@ import {PaginatorModule} from 'primeng/paginator';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {TooltipModule} from 'primeng/tooltip';
 
+import {MenuItem} from 'primeng/api';
 
 @NgModule({
     imports: [
+        
         TooltipModule,
         ToggleButtonModule,
         ScrollPanelModule,
