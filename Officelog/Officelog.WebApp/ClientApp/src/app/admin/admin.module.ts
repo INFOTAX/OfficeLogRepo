@@ -29,9 +29,9 @@ const appRoutes: Routes = [
     },
    
   children :[
-    { path: 'admin-userwise-report-dashboard', component: AdminUserwiseReportDashboardComponent},
-    { path: 'admin_user_profile_company_reporting/:userName', component: AdminUserProfileCompanyReportingComponent},
-    { path: 'admin_user_profile_marketing_reporting/:userName', component: AdminUserProfileMarketingReportingComponent},
+    { path: 'userwise-report-dashboard', component: AdminUserwiseReportDashboardComponent},
+    { path: 'user_profile_company_reporting/:userName', component: AdminUserProfileCompanyReportingComponent},
+    { path: 'user_profile_marketing_reporting/:userName', component: AdminUserProfileMarketingReportingComponent},
     { path: 'Marketing-report', component: AdminConsolidatedMarketingReportingComponent},
     { path: 'Company-report', component: AdminConsolidatedCompanyReportingComponent},
     { path: 'dashboard', component: AdminDashboardComponent},
