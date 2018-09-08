@@ -266,6 +266,6 @@ getChartForSoftwareType(softwaredata){
   
   
 }
-/*software data ended here*/
+
 
 }

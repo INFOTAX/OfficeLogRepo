@@ -46,7 +46,7 @@ const appRoutes: Routes = [
     },
     children: [
       { path: 'dashboard_log', component: DashboardComponent  },
-      { path: 'user_log', component: LoginUserFormComponent  },
+      { path: 'user_log/:action', component: LoginUserFormComponent  },
 
 
     ]

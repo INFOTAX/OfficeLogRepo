@@ -23,6 +23,13 @@ namespace Officelog.Domain.UserProfileLog
         
        }
 
+       public UserProfile(string name,string contactNumber,string designation)
+       {
+           Name = name;
+           ContactNumber = contactNumber;
+           Designation = designation;
+           
+       }
        public void Modify(string name,string contactNumber,string designation)
        {
           Name = name;

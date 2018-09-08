@@ -27,11 +27,11 @@ export class LoginUserFormComponent implements OnInit {
   ngOnInit() {
  this.userProfileForm=this.fb.group({
    id:'',
-   name:[''],
-   contactNumber:[''],
-   designation:[''],
+   name:['', [Validators.required, Validators.minLength(2)]],
+   contactNumber:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+   designation:['', [Validators.required, Validators.minLength(2)]],
  });
-   this. _userlogService.getProfile().subscribe(up =>{
+   this._userlogService.getProfile().subscribe(up =>{
      this.userlogs=up;
      console.log(up);
      this.userProfileForm.patchValue({
@@ -41,7 +41,7 @@ export class LoginUserFormComponent implements OnInit {
        designation:this.userlogs.designation
 
      });
-    /* this._activatedRoute.params.subscribe(params=>
+     this._activatedRoute.params.subscribe(params=>
     {
       this.action=params['action'];
       if(this.action=='edit'){
@@ -50,7 +50,7 @@ export class LoginUserFormComponent implements OnInit {
       else{
         this.userProfileForm.disable();
       }
-    });*/
+    });
    });
    this.pageTitle=`User Log`;
 
@@ -59,6 +59,7 @@ export class LoginUserFormComponent implements OnInit {
   onSave(): void{
     if (this.userProfileForm.dirty && this.userProfileForm.valid){
       let p =Object.assign({},this.userlogs,this.userProfileForm.value);
+      this._userlogService.updateProfile(p).subscribe(()=>this.onSaveComplete());
     /* this.loadingService.busy= this._userlogservice.updateProfile(p)
     .subscribe(()=>this.onSaveComplete());*/
     }
@@ -76,8 +77,8 @@ export class LoginUserFormComponent implements OnInit {
     });
   
     // Reset the form to clear the flags*/
-    this.userProfileForm.reset();
-    this._router.navigate(['/user_log']);
+    
+    this._router.navigate(['/authenticated/dashboard_log']);
   }
 
   userLog(){

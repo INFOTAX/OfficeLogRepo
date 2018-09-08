@@ -78,7 +78,7 @@ export class NavigationBarComponent implements OnInit {
   }
   userLog(){
 
-    this._router.navigate(['authenticated/user_log']);
+    this._router.navigate(['authenticated/user_log/detail']);
     
   }
 

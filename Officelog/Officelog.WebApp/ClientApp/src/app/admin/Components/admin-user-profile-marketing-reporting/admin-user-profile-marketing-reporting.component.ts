@@ -7,6 +7,7 @@ import { AdminUserProfileReportingService } from '../../../services/admin-user-p
   templateUrl: './admin-user-profile-marketing-reporting.component.html',
   styleUrls: ['./admin-user-profile-marketing-reporting.component.css']
 })
+
 export class AdminUserProfileMarketingReportingComponent implements OnInit {
   marketingReport;
   conversionReport;

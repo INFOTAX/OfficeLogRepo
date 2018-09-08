@@ -68,7 +68,7 @@ namespace Officelog.WebApp.UserProfileApi
         }
 
          [HttpPut("Profile")]
-        public async Task<IActionResult> UpdateUserProfile([FromBody] UserProfileResource model)
+        public async Task<IActionResult> UpdateUserProfile([FromBody] SaveUserProfileResource model)
         {
             // var accountingUnitFromDb = await _database.AccountingUnits.SingleOrDefaultAsync();
              var userProfileFromDb = await _database.UserProfiles.SingleOrDefaultAsync(t => t.Subject == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
