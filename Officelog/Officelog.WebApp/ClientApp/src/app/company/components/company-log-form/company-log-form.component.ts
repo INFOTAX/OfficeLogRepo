@@ -109,9 +109,9 @@ export class CompanyLogFormComponent implements OnInit {
         queryHandling:this.companylogs.queryHandling,
         serviceProvided:this.companylogs.serviceProvided,
         visitorType:this.companylogs.visitorType,
-        softwareInterested:this.companylogs.softwareInterested,
+        softwareInterested:this.softwareConvert(),
         rateUs:this.companylogs.rateUs,
-        rateUsForNo:this.companylogs.rateUsForNo,
+        rateUsForNo:this.rateUsConverter(),
         suggestionForYes:this.companylogs.suggestionForYes,
         suggestionForNo:this.companylogs.suggestionForNo,
         date:this.companylogs.date
@@ -146,13 +146,13 @@ export class CompanyLogFormComponent implements OnInit {
     this._router.navigate(['authenticated/company_log_list']);
 
 
-  }
+  } 
 
-  redioYes() {
+  softwareInterestedYes() {
     this.blockPreviewYes = true;
     this.blockPreviewNo = false;
   }
-  redioNo() {
+  softwareInterestedNo() {
     this.blockPreviewYes = false;
     this.blockPreviewNo = true;
   }
@@ -163,7 +163,32 @@ export class CompanyLogFormComponent implements OnInit {
     this.ifOther = false;
   }
 
-  
+  softwareConvert(){
+
+    if(this.companylogs.softwareInterested=="Yes"){
+      console.log(this.companylogs.softwareInterested);
+      this.softwareInterestedYes();
+      return "Yes";
+    }
+    else{
+      console.log(this.companylogs.softwareInterested)
+      this.softwareInterestedNo();
+      return "No";
+    }
+
+  }
+  rateUsConverter(){
+    if(this.companylogs.rateUsForNo=="others"){
+      this.otherReason();
+      return "others";
+    }
+    else if(this.companylogs.rateUsForNo=="alreadyHave"){
+     return "alreadyHave";
+    }
+    else{
+      return "notFriendly";
+    }
+  }
 
 }
 

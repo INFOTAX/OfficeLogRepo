@@ -2,12 +2,22 @@
 
 <div  style="margin-left: 250px; margin-right: 250px">
     <div class="ui-g">        
-            <p-table [value]="conversionList" (onRowSelect)="onRowSelect($event)" selectionMode="single" 
-            [(selection)]="selectedConversionList">
-            <ng-template pTemplate="caption" style="
-            font-weight: bold; font-size: 25px">
-                   <h3 style="font-weight: bold; margin-top: 10px">Conversion List</h3>
-                </ng-template>
+        <br><br>
+        
+        <div class="ui-g-6 ui-sm-6 ui-md-offset-6">
+                <br><br>
+                <div style="text-align: right">
+                    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                    <input type="text" pInputText size="50" placeholder="Conversion List" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                        style="width:240px">
+                </div>
+            </div>
+        
+        <div class="ui-g-12">
+            <u><h3 style="text-align: center; font-weight: bold">Conversion List</h3></u>
+        </div>
+            <p-table #dt [value]="conversionList" (onRowSelect)="onRowSelect($event)" selectionMode="single" 
+            [(selection)]="selectedConversionList" [globalFilterFields]="['name','contactNumber']">
                 <ng-template pTemplate="header">
                     
                     <tr>

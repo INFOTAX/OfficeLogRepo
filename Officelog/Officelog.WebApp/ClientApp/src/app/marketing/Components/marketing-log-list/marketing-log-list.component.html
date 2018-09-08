@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="ui-g">
-        <div class="ui-g-10 ui-sm-10 ui-md-offset-1 content-section implementation">
+    <div class="ui-g 11 ui-md-offset-1">
+        <div class="ui-g-10 ui-sm-10 content-section implementation">
                 <p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
                         <ng-template let-message pTemplate="message">
                             <div style="text-align: center">
@@ -19,7 +19,7 @@
                         </ng-template>
                     </p-toast>
         </div>
-        <div class="ui-g-10 ui-sm-10 ui-md-offset-1">
+        <div class="ui-g-11 ui-sm-11">
             <div class="ui-g">
                 <div class="ui-g-6 ui-sm-6">
                     <p-button button type="button" label="Add" (onClick)="onAddm()" class="ui-button-rounded ui-button-success" icon="fa fa-fw fa-plus"
@@ -27,7 +27,7 @@
 
                     </p-button>
                 </div>
-                <div class="ui-g-6 ui-sm-6">
+                <div class="ui-g-6 ui-sm-6 ">
                     <div style="text-align: right">
                         <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
                         <input type="text" pInputText size="50" placeholder="Marketing list Search" (input)="dt.filterGlobal($event.target.value, 'contains')"
@@ -54,12 +54,12 @@
                 </div>
             </div><br><br><br><br>
             <p-table #dt [value]="marketinglogs" (onRowSelect)="onRowSelect($event)" selectionMode="single" [(selection)]="selectedMarketingLog"
-                [globalFilterFields]="['Conversion','name','serviceInterested','softwareInterested','contact']">
+                [globalFilterFields]="['name','serviceInterested','softwareInterested','contactNumber']" [paginator]="true" [rows]="7">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Name</th>
                         <th>Contact No.</th>
-                        <th>Service Interested</th>
+                        <th>Service Interested</th> 
                         <th>Software Interested</th>
                         <th style="width: 26%;">Conversion</th>
                     </tr>

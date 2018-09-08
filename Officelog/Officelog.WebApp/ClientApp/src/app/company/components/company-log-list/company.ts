@@ -5,7 +5,7 @@ export interface ICompanylog{
     queryHandling:string;
     serviceProvided :string;
     visitorType:string;
-    softwareInterested:boolean;
+    softwareInterested:string;
     rateUs:string;
     rateUsForNo:string;
     suggestionForYes:string;

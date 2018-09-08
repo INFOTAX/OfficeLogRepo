@@ -35,7 +35,7 @@ export class CompanydashboardComponent implements OnInit {
   optsw:any;
   optsr:any;
    opt: any = {
-    legend: { position: 'bottom'}
+    legend: { position: 'false'}
   };
 
   constructor(private _router : Router, private companyReportService : CompanyReportService) { 
@@ -126,7 +126,7 @@ export class CompanydashboardComponent implements OnInit {
               fontColor: 'black',
               padding: 20,
           },
-            position: 'bottom',
+            position: 'false',
         }}
   }
 
@@ -171,7 +171,7 @@ export class CompanydashboardComponent implements OnInit {
               fontColor: 'black',
               padding: 20,
           },
-            position: 'bottom',
+            position: 'false',
         }}
     
     
@@ -218,7 +218,7 @@ export class CompanydashboardComponent implements OnInit {
               fontColor: 'black',
               padding: 20,
           },
-            position: 'bottom',
+            position: 'false',
         }}
     
     
@@ -256,7 +256,7 @@ getChartForSoftwareType(softwaredata){
             fontColor: 'black',
             padding: 20,
         },
-          position: 'right',
+          position: 'false',
       }}
   
   
