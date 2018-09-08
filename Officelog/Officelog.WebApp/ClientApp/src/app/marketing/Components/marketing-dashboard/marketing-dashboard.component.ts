@@ -85,7 +85,7 @@ export class MarketingDashboardComponent implements OnInit {
                     fontColor: 'black',
                     padding: 20,
                 },
-                  position: 'left',
+                  position: 'false',
               }}
     
 
@@ -122,7 +122,7 @@ export class MarketingDashboardComponent implements OnInit {
                     fontColor: 'black',
                     padding: 20,
                 },
-                  position: 'left',
+                  position: 'false',
               }}
     
 

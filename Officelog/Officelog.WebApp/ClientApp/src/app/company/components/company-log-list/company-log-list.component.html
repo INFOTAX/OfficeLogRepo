@@ -40,7 +40,7 @@
 
                         <div class="ui-g-2 ui-sm-2 ui-md-2 ui-fluid ui-inputgroup">
                             <br>
-                            <p-button (click)="searchByDate()" type="button" label="&nbsp;" class="ui-button-rounded" icon="fa fa-fw fa-search" style="margin-top:25px;">
+                            <p-button (click)="searchByDate()" type="button" class="ui-button-rounded" icon="fa fa-fw fa-search" style="margin-top:35px;">
                             </p-button>
 
                         </div>
@@ -59,7 +59,7 @@
             <!--table list content start-->
            
             <p-table #dtc [value]="companylogs" (onRowSelect)="onXYSelect($event)" selectionMode="single" [(selection)]="selectedCompanyLog"
-                [globalFilterFields]="['serviceRating','name','contact','typeOfQuery','visitorType']" [paginator]="true" [rows]="7"
+                [globalFilterFields]="['serviceProvided','name','contactNumber','queryHandling','visitorType']" [paginator]="true" [rows]="7"
                 [scrollable]="true" scrollHeight="250px">
                 <ng-template pTemplate="header">
                     <tr>
