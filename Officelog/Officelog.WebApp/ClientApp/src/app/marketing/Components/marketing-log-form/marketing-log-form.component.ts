@@ -3,10 +3,8 @@ import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@ang
 import { SelectItem} from 'primeng/components/common/selectitem';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IMarketinglog } from '../marketing-log-list/marketing';
-import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 import { MarketinglogService } from '../../../services/marketinglog.service';
 
-//import { MessageService } from 'primeng/api';
 
 
 
@@ -27,6 +25,7 @@ export class MarketingLogFormComponent implements OnInit {
   marketingLog: IMarketinglog;
   interrestedInService: SelectItem[];
   currentScenario: SelectItem[];
+  zone: SelectItem[];
   blockPreviewYes = false;
   blockPreviewNo = false;
   interested_Yes = false;
@@ -59,6 +58,16 @@ export class MarketingLogFormComponent implements OnInit {
 
     this.userForm = this.newForm();
 
+    this.zone=[
+      { label: 'Kankarbagh', value: 'Kankarbagh' },
+      { label: 'Rajendra Nagar', value: 'Rajendra Nagar' },
+      { label: 'Nala road', value: 'Nala road' },
+      { label: 'Kadamkuan', value: 'Kadamkuan' },
+      { label: 'Anisabad', value: 'Anisabad' },
+      { label: 'P C Colony', value: 'P C Colony' },
+      { label: 'Mithapur', value: 'Mithapur' }
+    ];
+
     this.interrestedInService = [
       { label: 'Accounting', value: 'Accounting' },
       { label: 'Income Tax Filing', value: 'Income Tax Filing' },
@@ -81,17 +90,17 @@ export class MarketingLogFormComponent implements OnInit {
   newForm():FormGroup{
     return this.fb.group({
       id: 0,
-      name: [''],
-      contactNumber: [],
-      softwareInterested: [''],
+      name: ['',Validators.required],
+      contactNumber: [[],[Validators.required]],
+      softwareInterested: ['',Validators.required],
       rateUs: [''],
       fee:0,
-      serviceInterested: [''],
+      serviceInterested: ['',Validators.required],
       rateUsForNo: [''],
       currentScenario: [''],
       suggestionForNo: [''],
       suggestionForYes: [''],
-      area: [''],
+      area: ['',Validators.required],
       date:new Date(),
       serviceItems : this.fb.array([])
     });
@@ -126,19 +135,19 @@ export class MarketingLogFormComponent implements OnInit {
     this.router.navigate(['authenticated/marketing_log_list'])
   }
 
-  redioYes() {
+  softwareInterestedYes() {
     this.blockPreviewYes = true;
     this.blockPreviewNo = false;
   }
-  redioNo() {
+  softwareInterestedNo() {
     this.blockPreviewYes = false;
     this.blockPreviewNo = true;
-  }
-  interestedYes() {
+  } 
+  serviceInterestedYes() {
     this.interested_Yes = true;
     this.interested_No = false;
   }
-  interestedNo() {
+  serviceInterestedNo() {
     this.interested_No = true;
     this.interested_Yes = false;
   }
@@ -180,7 +189,7 @@ export class MarketingLogFormComponent implements OnInit {
   }
   marketingLogList() {
 
-    this.router.navigate(['/marketing_log_list']);
+    this.router.navigate(['authenticated/marketing_log_list']);
     // this.compLog=true;
     // this.markLog=false;
   }
@@ -217,28 +226,28 @@ export class MarketingLogFormComponent implements OnInit {
   softwareConvert(){
     if(this.marketingLog.softwareInterested=="Yes"){
       console.log(this.marketingLog.softwareInterested);
-      this.redioYes();
+      this.softwareInterestedYes();
       return "Yes";
     }
     else{
       console.log(this.marketingLog.softwareInterested)
-      this.redioNo();
+      this.softwareInterestedNo();
       return "No";
     }
     
   }
   serviceConverter(){
-    if(this.marketingLog.softwareInterested=="Yes"){
+    if(this.marketingLog.serviceInterested=="Yes"){
       // console.log(this.marketingLog.softwareInterested);
       for (let i = 0; i < this.marketingLog.serviceItems.length; i++) {
         this.serviceTypeItems.push(this.buildServiceType(this.marketingLog.serviceItems[i]));
       }
-      this.interestedYes();
+      this.serviceInterestedYes();
       return "Yes";
     }
     else{
       console.log(this.marketingLog.softwareInterested)
-      this.interestedNo();
+      this.serviceInterestedNo();
       return "No";
     }
     

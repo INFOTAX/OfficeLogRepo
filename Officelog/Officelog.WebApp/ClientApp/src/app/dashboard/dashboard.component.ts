@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  [x: string]: any;
   constructor(private _router : Router) { }
 
   ngOnInit() {

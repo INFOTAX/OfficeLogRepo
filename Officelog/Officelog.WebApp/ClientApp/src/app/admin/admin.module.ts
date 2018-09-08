@@ -12,6 +12,7 @@ import { AdminAuthenticationComponent } from '../shared/admin-authentication/adm
 import { AuthGuardService } from '../guard/auth-guard.service';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { AdminConsolidatedSidebarComponent } from './Components/admin-consolidated-sidebar/admin-consolidated-sidebar.component';
+import { AdminNavBarComponent } from './Components/admin-nav-bar/admin-nav-bar.component';
 
 
 
@@ -46,6 +47,11 @@ const appRoutes: Routes = [
     SharedModule,
     RouterModule.forRoot(appRoutes),
   ],
+
+  exports: [
+    // AdminNavBarComponent
+      ],
+
   declarations: [
     AdminUserProfileMarketingReportingComponent,
     AdminUserProfileCompanyReportingComponent,
@@ -53,7 +59,8 @@ const appRoutes: Routes = [
     AdminConsolidatedMarketingReportingComponent,
     AdminConsolidatedCompanyReportingComponent,
     AdminDashboardComponent,
-    AdminConsolidatedSidebarComponent
+    AdminConsolidatedSidebarComponent,
+    // AdminNavBarComponent
 
   ]
 })

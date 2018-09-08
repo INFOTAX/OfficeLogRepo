@@ -26,6 +26,7 @@ import { AuthenticatedUserComponent } from './shared/authenticated-user/authenti
 import { ConversionServiceService } from './services/conversion-service.service';
 import { MarketingModule } from './marketing/marketing.module';
 import { MessageService } from 'primeng/api';
+import { AdminNavBarComponent } from './admin/Components/admin-nav-bar/admin-nav-bar.component';
 
 
 export function tokenGetter() {
@@ -66,6 +67,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     LoginUserFormComponent,
     SignInFormComponent,
+    
 
   ],
 
@@ -77,7 +79,7 @@ const appRoutes: Routes = [
     AdminModule,
     CompanyModule,
     MarketingModule,
-    HttpClientModule,
+  HttpClientModule,
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
       config: {
