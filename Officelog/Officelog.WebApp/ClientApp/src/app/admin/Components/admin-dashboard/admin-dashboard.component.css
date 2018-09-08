@@ -7,7 +7,8 @@
     height: 250px;
     background: #efefef;
    box-shadow: 9px 5px 12px 10px #917e909c;
-    border-radius: 30px
+    border-radius: 30px;
+    cursor: pointer;
 }
 .card2{
     width: 270px;
@@ -16,4 +17,5 @@
     box-shadow: 9px 5px 12px 10px #917e909c;
     border-radius: 30px;
     margin-left:18%;
+    cursor: pointer;
 }

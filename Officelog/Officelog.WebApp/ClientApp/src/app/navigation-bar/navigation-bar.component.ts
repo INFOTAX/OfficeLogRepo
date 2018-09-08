@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MenubarModule} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
-import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import {  Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,19 +9,12 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  [x: string]: any;
   items: MenuItem[];
 
-  constructor(private _router : Router,
-    private route: ActivatedRoute, private loginService: LoginService) { }
+  constructor(private _router : Router) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params=>{
-      this.userName = params['userName'];
-      
-      
-       
-    })
+   
     this.items = [ 
       {label: 'Home', icon: 'fa fa-fw fa-home' ,routerLink: ['/authenticated/dashboard_log']},
       
@@ -64,18 +56,19 @@ export class NavigationBarComponent implements OnInit {
      
 
 }
-  marketingLogList() {
+  // marketingLogList() {
 
-    this._router.navigate(['marketing_log_list']);
-    // this.compLog=true;
-    // this.markLog=false;
-  }
-  companyLogList(){
+  //   this._router.navigate(['marketing_log_list']);
+  //   // this.compLog=true;
+  //   // this.markLog=false;
+  // }
+  // companyLogList(){
 
-    this._router.navigate(['company_log_list']);
-    // this.compLog=true;
-    // this.markLog=false;
-  }
+  //   this._router.navigate(['company_log_list']);
+  //   // this.compLog=true;
+  //   // this.markLog=false;
+  // }
+  
   userLog(){
 
     this._router.navigate(['authenticated/user_log']);
@@ -83,16 +76,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
 
-  adminUserProfileCompanyReporting(){
-    this._router.navigate(['/admin_user_profile_company_reporting']);
-  }
-  adminUserMarketingCompanyReporting(){
-    this._router.navigate(['/admin_user_profile_marketing_reporting']);
-  }
-  adminUserWiseDashboardReporting(){
-    this._router.navigate(['/admin-userwise-report-dashboard']);
-  }
-
+ 
   logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('profile');
