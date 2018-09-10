@@ -163,4 +163,8 @@ getChartForConversion(convodata){
   getConversionReport(userName){
     this.adminCompanyService.getUserAdminConversionReport(userName).subscribe(res => this.conversion = res);
   }
+
+  back(){
+    this._router.navigate(['admin/userwise-report-dashboard']);
+  }
 }
