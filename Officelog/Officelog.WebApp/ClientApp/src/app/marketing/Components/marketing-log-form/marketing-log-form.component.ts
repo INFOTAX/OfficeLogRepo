@@ -208,6 +208,7 @@ export class MarketingLogFormComponent implements OnInit {
       id: this.marketingLog.id,
       name: this.marketingLog.name,
       contactNumber: this.marketingLog.contactNumber,
+      fee: this.marketingLog.fee,
       softwareInterested: this.softwareConvert(),// this.marketingLog.softwareInterested,
       rateUs: this.marketingLog.rateUs,
       serviceInterested: this.serviceConverter(),//marketingLog.serviceInterested,
@@ -216,8 +217,7 @@ export class MarketingLogFormComponent implements OnInit {
       suggestionForNo: this.marketingLog.suggestionForNo,
       suggestionForYes: this.marketingLog.suggestionForYes,
       area: this.marketingLog.area,
-      date: this.marketingLog.date,
-      fee: this.marketingLog.fee,
+      date: this.marketingLog.date
        
       });
       
