@@ -61,7 +61,7 @@ namespace Officelog.WebApp.UserProfileApi
         [HttpGet("UserUnits")]
         public async Task<IActionResult> Get()
         {
-             var userUnits = await _database.UserProfiles
+             var userUnits = await _database.UserProfiles.Where(a=>a.Role=="User")
                                     .ToListAsync();
 
                return Ok(userUnits); 
