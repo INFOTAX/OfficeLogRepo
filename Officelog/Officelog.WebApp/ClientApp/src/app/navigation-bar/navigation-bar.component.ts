@@ -1,6 +1,9 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {  Router } from '@angular/router';
+import { IUserlog } from '../login-user-form/userlogin';
+import { UserlogService } from '../services/userlog.service';
+import { LoginService } from '../services/login.service';
 
 
 @Component({
@@ -14,9 +17,12 @@ import {  Router } from '@angular/router';
 export class NavigationBarComponent implements OnInit {
   items: MenuItem[];
   toggleMenu: boolean = false;
-  constructor(private _router : Router,private elementRef:ElementRef) { }
+  userProfile  = this.loginService.getUserProfile();
+  
+  constructor(private _router : Router,private elementRef:ElementRef,private loginService : LoginService ) { }
 
   ngOnInit() {
+    
    
    /* this.items = [ 
       {label: 'Home', icon: 'fa fa-fw fa-home' ,routerLink: ['/authenticated/dashboard_log']},
@@ -71,6 +77,7 @@ export class NavigationBarComponent implements OnInit {
   //   // this.compLog=true;
   //   // this.markLog=false;
   // }
+  
   
   userLog(){
 

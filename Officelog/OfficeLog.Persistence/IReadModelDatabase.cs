@@ -10,7 +10,7 @@ namespace OfficeLog.Persistence
     {
         IQueryable<Company> Companies { get; }
         IQueryable<Marketing> Marketings { get; }
-        IQueryable<UserProfile> UserProfiles { get; }
+        DbSet<UserProfile> UserProfiles { get; }
 
     }
 
@@ -26,6 +26,6 @@ namespace OfficeLog.Persistence
 
         public IQueryable<Marketing> Marketings => _context.Marketings.AsNoTracking();
 
-        public IQueryable<UserProfile> UserProfiles => _context.UserProfiles.AsNoTracking();
+        public DbSet<UserProfile> UserProfiles => _context.UserProfiles;
     }
 }
