@@ -37,12 +37,14 @@
 
                     </p-button>
                 </div>
-                <div class="ui-g-6 ui-sm-6 ">
-                    <div style="text-align: right">
-                        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-                        <input type="text" pInputText size="50" placeholder="Marketing list Search" (input)="dt.filterGlobal($event.target.value, 'contains')"
-                            style="width:fit-content">
-                    </div>
+                <div class="ui-g-3 ui-sm-3 ui-md-offset-3 ">
+                    
+
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon" style="background-color: #0088f3; color: #ffffff; border-color: #0088f3"><i class="fa fa-search"></i></span>
+                            <input type="text" pInputText placeholder="  Marketing List Search" (input)="dt.filterGlobal($event.target.value, 'contains')">         
+                        </div>
+                    
                 </div>
             </div>
             <div class="ui-g-7 ui-sm-7">
