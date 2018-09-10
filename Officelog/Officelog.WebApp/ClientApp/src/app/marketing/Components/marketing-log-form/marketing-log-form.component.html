@@ -244,8 +244,10 @@
 
     </div>
     <p-footer>
-      <button pButton type="submit" label="Submit" class="ui-button-success" [disabled]="userForm.invalid"></button>
+      <button pButton type="submit" label="Submit" class="ui-button-success" style="margin-left:42%;" [disabled]="userForm.invalid"></button>
     </p-footer>
   </p-fieldset>
 </form>
+<br>
+<br>
 {{userForm.value | json}}
