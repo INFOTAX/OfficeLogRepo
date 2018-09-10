@@ -4,13 +4,14 @@
     <div class="ui-g">        
         <br><br>
         
-        <div class="ui-g-6 ui-sm-6 ui-md-offset-6">
+        <div class="ui-g-3 ui-sm-3 ui-md-offset-9">
                 <br><br>
-                <div style="text-align: right">
-                    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-                    <input type="text" pInputText size="50" placeholder="Conversion List" (input)="dt.filterGlobal($event.target.value, 'contains')"
-                        style="width:240px">
-                </div>
+
+                <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon" style="background-color: #0088f3; color: #ffffff; border-color: #0088f3"><i class="fa fa-search"></i></span>
+                        <input type="text" pInputText placeholder="  Conversion List Search" (input)="dt.filterGlobal($event.target.value, 'contains')">         
+                    </div>
+
             </div>
         
         <div class="ui-g-12">
