@@ -62,17 +62,10 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-            <!--table list content start-->
+<!--table list content start-->
            
             <p-table #dtc [columns]="cols" [value]="companylogs" (onRowSelect)="onXYSelect($event)" selectionMode="single" [(selection)]="selectedCompanyLog"
-                [globalFilterFields]="['serviceProvided','name','contactNumber','queryHandling','visitorType']" [paginator]="true" [rows]="7"
-                [scrollable]="true" scrollHeight="250px">
+                [globalFilterFields]="['serviceProvided','name','contactNumber','queryHandling','visitorType']" [paginator]="true" [rows]="7">
                 <ng-template pTemplate="header" let-columns>
                         <tr>
                             <th *ngFor="let col of columns">
