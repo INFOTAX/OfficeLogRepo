@@ -1,0 +1,21 @@
+a{
+    text-decoration: none;
+    color: #25252b;
+    /* padding: 10px; */
+    background: #b4ccd7;
+}
+
+a:visited {
+    background:skyblue;
+    color: #25252b;
+}
+/*a.active{
+    background:rgb(15, 48, 49);
+    color:white;
+    position: static;
+}*/
+.active,a:hover {
+    background-color: #666;
+    color: white;
+    position: static;
+}
