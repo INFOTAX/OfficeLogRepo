@@ -23,9 +23,11 @@ export class CompanyLogListComponent implements OnInit {
   toDate:Date;
   fromDate:Date;
   CompanySummary:any[];
-  totalVisit=1200;
-  serviceIntrested=890;
-  queryIntrested=270;
+  visitorType:any[];
+  serviceProvided:any[];
+  //softwareIntrested:any[];
+  queryHandling:any[];
+  cols: any[];
 
   constructor(private _companylogService: CompanylogService,
     private _router: Router,
@@ -37,6 +39,40 @@ export class CompanyLogListComponent implements OnInit {
     this.toDate=new Date();
    this.fromDate=new Date();
   this.searchByDate(this.fromDate,this.toDate);
+
+  this.visitorType = [
+    { label: 'All', value: null },
+    { label: 'First', value: 'First' },
+    { label: 'Second Or Third', value: 'Second Or Third' },
+    { label: 'Client', value: 'Client' },
+    { label: 'Franchise', value: 'Franchise' },];
+
+    this.queryHandling = [
+      { label: 'All Ratings', value: null },
+      { label: 'Bad', value: 'Bad' },
+      { label: 'Good', value: 'Good' },
+      { label: 'Very Good', value: 'Very Good' },
+      { label: 'Excellent', value: 'Excellent' },];
+
+  // this.softwareIntrested = [
+  //   { label: 'No', value: 'no' },
+  //   { label: 'Yes', value: 'yes' },];
+
+  this.serviceProvided =  [
+    { label: 'All Ratings', value: null },
+    { label: 'Bad', value: 'Bad' },
+    { label: 'Good', value: 'Good' },
+    { label: 'Very Good', value: 'Very Good' },
+    { label: 'Excellent', value: 'Excellent' },];
+
+  this.cols = [
+    { field: 'name', header: 'Name' },
+    { field: 'contactNumber', header: 'Contact No.' },
+    { field: 'visitorType', header: 'Visitor Type' },
+    { field: 'queryHandling', header: 'Query Rating' },
+    { field: 'serviceProvided', header: 'Service Rating' },
+    { field: 'delete', header: 'Delete' }
+];
  }
 
   // getCompanyLogList() {
