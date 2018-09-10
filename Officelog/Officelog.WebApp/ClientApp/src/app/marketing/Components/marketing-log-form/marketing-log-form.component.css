@@ -4,7 +4,11 @@ label{
 th{
     text-align:left;
 }
-
+:host ::ng-deep .ui-fieldset {
+    border: 1px solid #c8c8c8;
+    background-color: #efefef;
+    color: #333333;
+}
 :host ::ng-deep legend{
     text-align:center;
     border-bottom: 2px solid #e5e5e5;

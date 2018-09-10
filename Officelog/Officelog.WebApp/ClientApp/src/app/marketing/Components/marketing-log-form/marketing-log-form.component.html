@@ -41,7 +41,7 @@
         <input id="tradeName" pKeyFilter="alphanum" class="ng-dirty ng-invalid ng-touched" formControlName="name" type="text" pInputText>
       </div>
       <div class="ui-g-4 ">
-        <div class="ui-message ui-messages-error  ng-dirty ng-invalid ng-touched"  *ngIf="userForm.get('name').touched && userForm.get('name').invalid">
+        <div class="ng-dirty ng-invalid ng-touched"  *ngIf="userForm.get('name').touched && userForm.get('name').invalid">
             <p-message severity="error" text="Field is required"></p-message>
         </div>
       </div>
@@ -52,10 +52,10 @@
       </div>
       <div class="ui-sm-4 ui-g-4">
           <span class="ui-inputgroup-addon num">+91</span>
-        <input id="contact"  pKeyFilter="int" formControlName="contactNumber" type="number"  pInputText>
+        <input id="contact"  pKeyFilter="int" formControlName="contactNumber" type="text"  pInputText>
       </div>
       <div class="ui-g-4 ">
-        <div class="ui-message ui-messages-error" *ngIf="userForm.get('contactNumber').touched && userForm.get('contactNumber').invalid">
+        <div class="ng-dirty ng-invalid ng-touched" *ngIf="userForm.get('contactNumber').touched && userForm.get('contactNumber').invalid">
           
             <p-message severity="error" text="Field is required"></p-message>
         </div>
@@ -79,7 +79,7 @@
           <p-radioButton name="group5" formControlName="serviceInterested" value="No" label="No" (onClick)="serviceInterestedNo();"></p-radioButton>
         </div>
         <div class="ui-g-4 ">
-          <div class="ui-message ui-messages-error  ng-dirty ng-invalid ng-touched" *ngIf="userForm.get('serviceInterested').touched && userForm.get('serviceInterested').invalid">
+          <div class="ng-dirty ng-invalid ng-touched" *ngIf="userForm.get('serviceInterested').touched && userForm.get('serviceInterested').invalid">
               <p-message severity="error" text="Field is required"></p-message>
           </div>
         </div>
@@ -137,7 +137,7 @@
           <ng-template pTemplate="footer">
             <tr>
               <td>
-                <p-dropdown [style]="{'width': '175px'}" [options]="currentScenario" formControlName="currentScenario" placeholder="Select a Type" filter="true">
+                <p-dropdown [style]="{'width': '197px'}" [options]="currentScenario" formControlName="currentScenario" placeholder="Select a Type" filter="true">
                   <ng-template let-option pTemplate="item">
                     <div translate> {{option.label}}</div>
                   </ng-template>
@@ -160,7 +160,7 @@
           <p-radioButton name="group3" formControlName="softwareInterested" value="No" label="No" (onClick)="softwareInterestedNo();"></p-radioButton>
         </div>
         <div class="ui-g-4 ">
-          <div class="ui-message ui-messages-error  ng-dirty ng-invalid ng-touched"  *ngIf="userForm.get('softwareInterested').touched && userForm.get('softwareInterested').invalid">
+          <div class="ng-dirty ng-invalid ng-touched"  *ngIf="userForm.get('softwareInterested').touched && userForm.get('softwareInterested').invalid">
               <p-message severity="error" text="Field is required"></p-message>
           </div>
         </div>
