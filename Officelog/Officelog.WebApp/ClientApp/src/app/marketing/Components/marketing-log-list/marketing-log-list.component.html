@@ -65,16 +65,22 @@
                         (click)="searchByDate();" style="height:40px"></p-button>
                 </div>
             </div><br><br><br><br>
-            <p-table #dt [value]="marketinglogs" (onRowSelect)="onRowSelect($event)" selectionMode="single" [(selection)]="selectedMarketingLog"
+            <p-table #dt [columns]="cols" [value]="marketinglogs" (onRowSelect)="onRowSelect($event)" selectionMode="single" [(selection)]="selectedMarketingLog"
                 [globalFilterFields]="['name','serviceInterested','softwareInterested','contactNumber']" [paginator]="true" [rows]="7">
-                <ng-template pTemplate="header">
+                <ng-template pTemplate="header" let-columns>
                     <tr>
-                        <th>Name</th>
-                        <th>Contact No.</th>
-                        <th>Service Interested</th> 
-                        <th>Software Interested</th>
-                        <th style="width: 26%;">Conversion</th>
+                        <th  *ngFor="let col of columns">{{col.header}}</th>
+                        <th style="width: 12%">Convert / Delete</th>
                     </tr>
+                    <tr>
+                    <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                            <p-dropdown *ngSwitchCase="'serviceInterested'" [options]="serviceInterested" [style]="{'width':'100%'}" 
+                            (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+                            <p-dropdown *ngSwitchCase="'softwareInterested'" [options]="softwareInterested" [style]="{'width':'100%'}" 
+                            (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+                    </th>
+                    <th></th>
+                </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-rowData let-marketinglog style="text-align: center;">
                     <tr [pSelectableRow]="rowData" style="text-align: center;">
@@ -83,10 +89,11 @@
                         <td>{{marketinglog.serviceInterested}}</td>
                         <td>{{marketinglog.softwareInterested}}</td>
                         <td>
-                            <p-button label="Convert" type="button" (click)="patchConversion(rowData)" icon="fa fa-fw fa-plus" iconPos="left"></p-button>
+                            <p-button type="button" (click)="patchConversion(rowData)" icon="fa fa-refresh" 
+                            styleClass="ui-button-success" iconPos="left"></p-button>
                             &nbsp;
-                            <p-button label="Delete" type="button" (click)="showConfirm(rowData)" icon="fa fa-fw fa-trash" iconPos="left" 
-                            styleClass="ui-button-warning"></p-button>
+                            <p-button type="button" (click)="showConfirm(rowData)" icon="fa fa-fw fa-trash" iconPos="left" 
+                            styleClass="ui-button-danger"></p-button>
                         </td>
                     </tr>
                 </ng-template>

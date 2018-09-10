@@ -253,6 +253,7 @@ export class MarketingLogFormComponent implements OnInit {
     
   }
   rateUsConverter(){
+    if(this.marketingLog.rateUsForNo!=""){
     if(this.marketingLog.rateUsForNo=="others"){
       this.otherReason();
       return "others";
@@ -264,5 +265,11 @@ export class MarketingLogFormComponent implements OnInit {
       return "notFriendly";
     }
   }
+  else{
+    return "";
+  }
+}
+
+
 
 }

@@ -21,13 +21,11 @@ export class MarketingLogListComponent implements OnInit {
   rowIndex;
   startDate:Date;
   lastDate:Date;
+  cols:any[];
+  softwareInterested:any[];
+  serviceInterested:any[];
   
   
-  
-   
-
-    
-
   constructor( private _marketinglogService:MarketinglogService ,
                private _router: Router,
                private messageService: MessageService,
@@ -37,7 +35,26 @@ export class MarketingLogListComponent implements OnInit {
     this.startDate=new Date();
     this.lastDate=new Date();
     this.searchByDate(this.startDate,this.lastDate);
+
+    this.softwareInterested=[
+      { label: 'All', value: null },
+      { label: 'Yes', value: 'Yes' },
+      { label: 'No', value: 'No'}
+    ];
+
+    this.serviceInterested=[
+      { label: 'All', value: null },
+      { label: 'Yes', value: 'Yes' },
+      { label: 'No', value: 'No'}
+    ];
     
+    this.cols=[
+    { field: 'name', header: 'Name' },
+    { field: 'contactNumber', header: 'Contact No.' },
+    { field: 'serviceInterested', header: 'Service Interested' },
+    { field: 'softwareInterested', header: 'Software Interested' },
+    //{ field: 'actions', header: 'Convert / Delete'}
+    ];
     
     
 }
