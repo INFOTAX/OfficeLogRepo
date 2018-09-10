@@ -21,12 +21,13 @@ import {ConfirmDialogModule, ChartModule, PanelMenuModule} from 'primeng/primeng
 import {PaginatorModule} from 'primeng/paginator';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {TooltipModule} from 'primeng/tooltip';
-
+import {MessageModule} from 'primeng/message';
 import {MenuItem} from 'primeng/api';
-
+import {KeyFilterModule} from 'primeng/keyfilter';
 @NgModule({
     imports: [
-        
+        KeyFilterModule,
+        MessageModule,
         TooltipModule,
         ToggleButtonModule,
         ScrollPanelModule,
@@ -53,6 +54,8 @@ import {MenuItem} from 'primeng/api';
         PanelMenuModule
     ],
     exports: [
+        KeyFilterModule,
+        MessageModule,
         TooltipModule,
         ToggleButtonModule,
         ScrollPanelModule,

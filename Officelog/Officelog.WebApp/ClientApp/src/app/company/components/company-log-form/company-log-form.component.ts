@@ -67,8 +67,8 @@ export class CompanyLogFormComponent implements OnInit {
   newForm(): FormGroup {
     return this.fb.group({
       id: 0,
-      name: ['',Validators.required],
-      contactNumber: [[],[Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      contactNumber:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
       softwareInterested: ['',Validators.required],
       queryHandling: ['',Validators.required],
       serviceProvided: ['',Validators.required],

@@ -3,13 +3,11 @@
 
   <p-button label="Back" button type="button" (onClick)="companyLogList()" icon="fa fa-fw fa-arrow-left" class="ui-button-rounded ui-button-success"></p-button>
   <p>&nbsp;</p>
-  <p-panel>
-    <p-header style="text-align:center; font-size: 20px">
-      <div class="ui-helper-clearfix">
-        <span class="ui-panel-title" style="display:inline-block;
-         font-weight: bold; font-size: 25px">Company Log</span>
-      </div> 
-    </p-header>
+  <p-fieldset legend="Comany Log">
+    
+    
+  
+  
     <div class="ui-g">
 
       <div class="ui-sm-4  ui-g-4" style="margin-top: 10px">
@@ -23,12 +21,11 @@
         <label for="name">Trade Name:</label>
       </div>
       <div class="ui-sm-4  ui-g-4">
-        <input id="name" formControlName="name" type="text" pInputText>
+        <input  pKeyFilter="alphanum" id="name" formControlName="name" type="text" class="ng-dirty ng-invalid ng-touched" pInputText>
       </div>
       <div class="ui-sm-4  ui-g-4">
-      <div class="ui-message ui-messages-error" style="border: 0px; color: red" *ngIf="userForm.get('name').touched && userForm.get('name').invalid">
-        <i class="fa fa-fw fa-close"></i>
-        Trade name is required
+      <div  *ngIf="userForm.get('name').touched && userForm.get('name').invalid">
+          <p-message severity="error" text="Field is required"></p-message>
       </div>
     </div>
 
@@ -38,13 +35,19 @@
         <label for="contact">Contact Number:</label>
       </div>
       <div class="ui-sm-4  ui-g-4">
-        <input id="contact" formControlName="contactNumber" type="number" pInputText>
+          <span class="ui-inputgroup-addon num">+91</span>
+        <input id="contact" pKeyFilter="int" formControlName="contactNumber" class="ng-dirty ng-invalid" type="text" pInputText>
       </div>
       <div class="ui-sm-4  ui-g-4">
-        <div class="ui-message ui-messages-error" style="border: 0px; color: red" *ngIf="userForm.get('contactNumber').touched && userForm.get('contactNumber').invalid">
-          <i class="fa fa-fw fa-close"></i>
-          Contact number is required
-        </div>
+        <div *ngIf="userForm.get('contactNumber').touched && userForm.get('contactNumber').invalid">
+            <p-message severity="error" text="Field is required"></p-message></div>
+            <div *ngIf="userForm.get('contactNumber').hasError('minlength')">
+              <p-message severity="error" text="Input 10 digit number"></p-message>
+            </div>
+            <div *ngIf="userForm.get('contactNumber').hasError('maxlength')">
+                <p-message severity="error" text="Maximum 10 digit ,Input again"></p-message>
+              </div>
+       
       </div>
 
 
@@ -67,9 +70,8 @@
         </div>
       </div>
       <div class="ui-sm-4  ui-g-4 ui-md-offset-4" *ngIf="userForm.get('queryHandling').touched && userForm.get('queryHandling').invalid">
-        <div class="ui-message ui-messages-error" style="border: 0px; color: red" >
-          <i class="fa fa-fw fa-close"></i>
-          This field is required
+        <div class="ui-message ui-messages-error ng-dirty ng-invalid ng-touched" >
+            <p-message severity="error" text="Field is required"></p-message>
         </div>
       </div>
 
@@ -91,9 +93,8 @@
         </div>
       </div>
       <div class="ui-sm-4  ui-g-4 ui-md-offset-4" *ngIf="userForm.get('serviceProvided').touched && userForm.get('serviceProvided').invalid">
-        <div class="ui-message ui-messages-error" style="border: 0px; color: red">
-          <i class="fa fa-fw fa-close"></i>
-          This field is required
+        <div class="ui-message ui-messages-error ng-dirty ng-invalid ng-touched">
+            <p-message severity="error" text="Field is required"></p-message>
         </div>
       </div>
 
@@ -102,13 +103,12 @@
       </div>
       <div class="ui-g-8">
       <div class="ui-sm-6  ui-g-6 ui-fluid">
-        <p-dropdown [style]="{'width': '175px'}" [options]="visitorType" placeholder="Select a Type" formControlName="visitorType"
+        <p-dropdown [style]="{'width': '197px'}" [options]="visitorType" placeholder="Select a Type" formControlName="visitorType"
           filter="true"></p-dropdown>
       </div>
       <div class="ui-sm-6  ui-g-6" *ngIf="userForm.get('visitorType').touched && userForm.get('visitorType').invalid">
-        <div class="ui-message ui-messages-error" style="border: 0px; color: red">
-          <i class="fa fa-fw fa-close"></i>
-          Visitor type is required
+        <div class="ui-message ui-messages-error ng-dirty ng-invalid ng-touched" >
+            <p-message severity="error" text="Field is required"></p-message>
         </div>
       </div>
     </div>
@@ -125,9 +125,8 @@
           <p-radioButton name="group3" formControlName="softwareInterested" value="No" label="No" (onClick)="softwareInterestedNo();"></p-radioButton>
         </div>
         <div class="ui-sm-4  ui-g-4" *ngIf="userForm.get('softwareInterested').touched && userForm.get('softwareInterested').invalid">
-          <div class="ui-message ui-messages-error" style="border: 0px; color: red">
-            <i class="fa fa-fw fa-close"></i>
-            This field is required
+          <div class="ui-message ui-messages-error ng-dirty ng-invalid ng-touched">
+              <p-message severity="error" text="Field is required"></p-message>
           </div>
         </div>
 
@@ -199,8 +198,10 @@
       </div>
     </div>
     <p-footer>
-      <button pButton type="submit" label="Submit" class="ui-button-success" [disabled]="userForm.invalid"></button>
+      <button pButton type="submit" label="Submit" class="ui-button-success" [disabled]="userForm.invalid" style="margin-left:42%;"></button>
     </p-footer>
-  </p-panel>
+  </p-fieldset>
 </form>
+<br>
+<br>
 {{userForm.value |json}}
