@@ -8,20 +8,8 @@ import { MenuItem } from 'primeng/api';
 })
 export class AdminConsolidatedSidebarComponent implements OnInit {
 
-  items: MenuItem[];
-
   constructor() { }
 
   ngOnInit() {
-    this.items = [
-
-      {
-        label: 'Reports',expanded : true,
-          
-        items: [
-                {label: 'Company',routerLink:['admin/Company-report']},
-                {label: 'Marketing',routerLink:['admin/Marketing-report']},
-                 ]
-    },  
-  ]
-}}
+ 
+  }}
