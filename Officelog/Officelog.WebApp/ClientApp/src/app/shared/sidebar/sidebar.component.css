@@ -23,7 +23,7 @@
         .xyz{
            /* background-image: linear-gradient(90deg,#ffffff52 ,#0000ff6b);*/
             background-color:#101010;
-            height:fit-content;
+            height:100%;
             width:225px;
         }
      
