@@ -94,7 +94,7 @@ export class MarketingLogFormComponent implements OnInit {
       contactNumber:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
       softwareInterested: ['',Validators.required],
       rateUs: [''],
-      fee:0,
+      fee:[],
       serviceInterested: ['',Validators.required],
       rateUsForNo: [''],
       currentScenario: [''],
@@ -136,20 +136,27 @@ export class MarketingLogFormComponent implements OnInit {
   }
 
   softwareInterestedYes() {
-    this.blockPreviewYes = true;
+    this.blockPreviewYes= true;
     this.blockPreviewNo = false;
+    this.marketingLog.rateUsForNo="";
+    this.marketingLog.suggestionForNo="";
   }
   softwareInterestedNo() {
     this.blockPreviewYes = false;
     this.blockPreviewNo = true;
+    this.marketingLog.rateUs="";
+    this.marketingLog.suggestionForYes="";
+    this.marketingLog.fee=null;
   } 
   serviceInterestedYes() {
     this.interested_Yes = true;
     this.interested_No = false;
+    this.marketingLog.currentScenario="";
   }
   serviceInterestedNo() {
     this.interested_No = true;
     this.interested_Yes = false;
+    this.marketingLog.serviceItems=null;
   }
 
   
@@ -208,8 +215,8 @@ export class MarketingLogFormComponent implements OnInit {
       id: this.marketingLog.id,
       name: this.marketingLog.name,
       contactNumber: this.marketingLog.contactNumber,
-      fee: this.marketingLog.fee,
       softwareInterested: this.softwareConvert(),// this.marketingLog.softwareInterested,
+      fee: this.marketingLog.fee,
       rateUs: this.marketingLog.rateUs,
       serviceInterested: this.serviceConverter(),//marketingLog.serviceInterested,
       rateUsForNo: this.rateUsConverter(),//marketingLog.rateUsForNo,
