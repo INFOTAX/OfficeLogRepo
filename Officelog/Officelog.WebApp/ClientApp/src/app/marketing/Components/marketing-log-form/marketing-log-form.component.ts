@@ -146,7 +146,7 @@ export class MarketingLogFormComponent implements OnInit {
     this.blockPreviewNo = true;
     this.marketingLog.rateUs="";
     this.marketingLog.suggestionForYes="";
-    this.marketingLog.fee=null;
+    this.marketingLog.fee=0;
   } 
   serviceInterestedYes() {
     this.interested_Yes = true;
