@@ -18,7 +18,8 @@
             <u><h3 style="text-align: center; font-weight: bold">Conversion List</h3></u>
         </div>
             <p-table #dt [value]="conversionList" (onRowSelect)="onRowSelect($event)" selectionMode="single" 
-            [(selection)]="selectedConversionList" [globalFilterFields]="['name','contactNumber']">
+            [(selection)]="selectedConversionList" [globalFilterFields]="['name','contactNumber']"
+            [paginator]="true" [rows]="7">
                 <ng-template pTemplate="header">
                     
                     <tr>
