@@ -88,16 +88,16 @@
           <p-table [value] = "userForm.value.serviceItems">
             <ng-template pTemplate="header">
               <tr>
-                <th>Service Type</th>
-                <th>Rate</th>
-                <th style="width: 120px">Action</th>
+                <th style="font-weight:bold">Service Type</th>
+                <th style="font-weight:bold">Rate</th>
+                <th style="width: 15%;font-weight:bold">Action</th>
               </tr>
             </ng-template>
             <ng-template pTemplate="body" let-item let-rowIndex = "rowIndex">
               <tr>
                 <td>{{item.serviceType}}</td>
                 <td>{{item.rate}}</td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td>&nbsp;&nbsp;
                   <button pButton type="button" icon="fa fa-fw fa-trash" 
                    (click)="deleteServiceType(rowIndex)" class="ui-button-danger"></button>
                 </td>
@@ -114,9 +114,9 @@
                   </p-dropdown>
                 </td>
                 <td>
-                  <input type="number" pInputText style="height: 35px"  #rate/>
+                  <input type="number" pInputNumber style="height: 35px"  #rate/>
                 </td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td>&nbsp;&nbsp;
                   <button pButton type="button" icon="fa fa-fw fa-plus" (click)="addNewServiceType(type,rate);"></button>
                 </td>
               </tr>
@@ -130,7 +130,7 @@
         <p-table>
           <ng-template pTemplate="header">
             <tr>
-              <th>Current Scenario:</th>
+              <th style="font-weight:bold">Current Scenario:</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="footer">
@@ -170,7 +170,7 @@
           <p-panel>
             <p-header>
               <div class="ui-helper-clearfix">
-                <span class="ui-panel-title">Please rate us.</span>
+                <span class="ui-panel-title" style="font-weight:bold">Please rate us.</span>
               </div>
             </p-header>
             <div class="ui-g">
@@ -191,17 +191,15 @@
             </div>
             <div class="ui-g">
               <div class="ui-sm-12 ui-g-12">
-                <label for="anySuggestion">Any suggestion?</label>
-              </div>
-              <div class="ui-sm-12 ui-g-12">
+                <label for="anySuggestion" style="font-weight:bold">Any suggestion?</label>
+                <br>
                 <textarea id="anySuggestion" rows="5" cols="65" type="text" formControlName="suggestionForYes" pInputTextarea autoResize="autoResize"></textarea>
               </div>
             </div>
             <div class="ui-g">
               <div class="ui-sm-12 ui-g-12">
                 <label for="fees">Fee:</label>
-              </div>
-              <div class="ui-sm-12 ui-g-12">
+                <br>
                 <input id="fees" type="number" formControlName="fee" pInputNumber>
               </div>
             </div>
@@ -214,7 +212,7 @@
           <p-panel>
             <p-header>
               <div class="ui-helper-clearfix">
-                <span class="ui-panel-title">Please give reasons.</span>
+                <span class="ui-panel-title" style="font-weight:bold">Please give reasons.</span>
               </div>
             </p-header>
             <div class="ui-g">
