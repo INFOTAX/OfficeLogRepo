@@ -70,8 +70,8 @@ export class CompanyLogListComponent implements OnInit {
     { field: 'contactNumber', header: 'Contact No.' },
     { field: 'visitorType', header: 'Visitor Type' },
     { field: 'queryHandling', header: 'Query Rating' },
-    { field: 'serviceProvided', header: 'Service Rating' },
-    { field: 'delete', header: 'Delete' }
+    { field: 'serviceProvided', header: 'Service Rating' }
+   
 ];
  }
 

@@ -71,6 +71,7 @@
                             <th *ngFor="let col of columns">
                                 {{col.header}}
                             </th>
+                            <th style="width: 12%">Delete</th>
                         </tr>
                         <tr>
                             <th *ngFor="let col of columns" [ngSwitch]="col.field">
@@ -81,6 +82,7 @@
                                     <p-dropdown *ngSwitchCase="'serviceProvided'" [options]="serviceProvided" [style]="{'width':'100%'}" 
                                     (onChange)="dtc.filter($event.value, col.field, 'equals')"></p-dropdown>
                             </th>
+                            <th></th>
                         </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-rowData let-companylog style="text-align: center;">
@@ -91,8 +93,8 @@
                             <td>{{companylog.queryHandling}}</td>
                             <td>{{companylog.serviceProvided}}</td>
                             <td>
-                                <p-button type="button"  class=" ui-button-danger" icon="fa fa-fw fa-trash" style="margin-bottom:10px;"
-                                    (click)="showDialogToDelete(companylog)">
+                                <p-button type="button"  styleClass="ui-button-danger" icon="fa fa-fw fa-trash" style="margin-bottom:10px;"
+                                 (click)="showDialogToDelete(companylog)">
                                 </p-button>
                     
                             </td>
