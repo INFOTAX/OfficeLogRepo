@@ -13,3 +13,9 @@
        font-family: 'Times New Roman', Times, serif
         /* font-family: Helvetica Neue,Helvetica,Arial,sans-serif; */
 }
+/*for stoping text to overflow in table column*/
+    th{
+        font-weight: 700 !important;
+        text-align: center;
+        background:#ffe399cf !important;
+    }

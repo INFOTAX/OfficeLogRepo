@@ -1,4 +1,12 @@
 th{
     font-weight: 700 !important;
     text-align: center;
+    background:#ffe399cf !important;
+}
+:host ::ng-deep.ui-table .ui-table-tbody > tr > td {
+    max-width: 93px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  
 }

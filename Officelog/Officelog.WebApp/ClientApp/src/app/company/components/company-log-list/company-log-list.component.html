@@ -1,10 +1,10 @@
-<br>
+
 <br>
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-3">
         </div>
-    <div class="col-md-4">
-       <h2> Company Log List</h2>
+    <div class="col-md-8">
+     <h2 style="color:#222222;margin-left:86px; font-weight:600px;"> Company Log List</h2>
         </div>
         </div>
         <br>
@@ -19,7 +19,7 @@
                 <div class="ui-g-6 ui-sm-6">
 
                     <p-button button type="button" label="Add" (onClick)="onAddc()" class="ui-button-rounded ui-button-success" icon="fa fa-fw fa-plus"
-                        style="margin-bottom:10px;">
+                        style="margin-bottom:1px;margin-left:-14px;">
                     </p-button>
                 </div>
 
@@ -27,7 +27,7 @@
 
                         <div class="ui-inputgroup">
                                 <span class="ui-inputgroup-addon" style="background-color: #0088f3; color: #ffffff; border-color: #0088f3"><i class="fa fa-search"></i></span>
-                                <input type="text" pInputText placeholder="  Company List Search" (input)="dtc.filterGlobal($event.target.value, 'contains')">         
+                                <input type="text" pInputText placeholder="Company List Search" (input)="dtc.filterGlobal($event.target.value, 'contains')">         
                             </div>
 
                 </div>
@@ -36,7 +36,7 @@
                 <div class="ui-g-10 ui-sm-10">
                     <div class="ui-g">
                         <div class="ui-g-8 ui-sm-8 ui-md-8">
-                            <div class="ui-g">
+                            <div class="ui-g" style="margin-left:-25px ;">
                                 <div class="ui-sm-6 ui-md-6 ui-g-6">
                                     <label for="toDate">From:</label>
                                     <br>
@@ -52,7 +52,7 @@
 
                         <div class="ui-g-2 ui-sm-2 ui-md-2 ui-fluid ui-inputgroup">
                             <br>
-                            <p-button (click)="searchByDate()" type="button" class="ui-button-rounded" icon="fa fa-fw fa-search" style="margin-top:35px;">
+                            <p-button (click)="searchByDate()" type="button" class="ui-button-rounded" icon="fa fa-fw fa-search" style="margin-top:35px;margin-left:-15px;">
                             </p-button>
 
                         </div>
