@@ -3,7 +3,7 @@
 
   <p-button label="Back" button type="button" (onClick)="companyLogList()" icon="fa fa-fw fa-arrow-left" class="ui-button-rounded ui-button-success"></p-button>
   <p>&nbsp;</p>
-  <p-fieldset legend="Comany Log">
+  <p-fieldset legend="Company Log">
     
     
   
@@ -107,9 +107,7 @@
           filter="true"></p-dropdown>
       </div>
       <div class="ui-sm-6  ui-g-6" *ngIf="userForm.get('visitorType').touched && userForm.get('visitorType').invalid">
-        <div class="ui-message ui-messages-error ng-dirty ng-invalid ng-touched" >
-            <p-message severity="error" text="Field is required"></p-message>
-        </div>
+          <p-message severity="error" text="Field is required"></p-message>
       </div>
     </div>
 
@@ -159,8 +157,7 @@
             <div class="ui-g">
               <div class="ui-sm-12 ui-g-12">
                 <label for="anySuggestion">Any suggestion?</label>
-              </div>
-              <div class="ui-sm-12 ui-g-12">
+              <br>
                 <textarea id="anySuggestion" rows="5" cols="45" pInputTextarea formControlName="suggestionForYes" autoResize="autoResize"></textarea>
               </div>
 
@@ -188,7 +185,7 @@
                 <p-radioButton name="group6" formControlName="rateUsForNo" value="others" label="others" (onClick)="otherReason();"></p-radioButton>
               </div>
               <div class="ui-sm-12 ui-g-12" *ngIf="ifOther">
-                <span>Please give suggestion to improvise</span>
+                <span style="font-weight:bold">Please give suggestion to improvise</span>
                 <br>
                 <textarea id="anySuggestion" rows="5" cols="45" formControlName="suggestionForNo" pInputTextarea autoResize="autoResize"></textarea>
               </div>

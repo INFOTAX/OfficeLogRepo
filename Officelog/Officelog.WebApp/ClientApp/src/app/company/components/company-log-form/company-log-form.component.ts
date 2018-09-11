@@ -151,10 +151,14 @@ export class CompanyLogFormComponent implements OnInit {
   softwareInterestedYes() {
     this.blockPreviewYes = true;
     this.blockPreviewNo = false;
+    this.companylogs.rateUsForNo="";
+    this.companylogs.suggestionForNo="";
   }
   softwareInterestedNo() {
     this.blockPreviewYes = false;
     this.blockPreviewNo = true;
+    this.companylogs.rateUs="";
+    this.companylogs.suggestionForYes="";
   }
   otherReason() {
     this.ifOther = true;
@@ -178,6 +182,7 @@ export class CompanyLogFormComponent implements OnInit {
 
   }
   rateUsConverter(){
+    if(this.companylogs.softwareInterested=="No"){
     if(this.companylogs.rateUsForNo=="others"){
       this.otherReason();
       return "others";
@@ -188,6 +193,10 @@ export class CompanyLogFormComponent implements OnInit {
     else{
       return "notFriendly";
     }
+  }
+  else{
+    return "";
+  }
   }
 
 }
